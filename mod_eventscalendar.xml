@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="4.0" client="site" method="upgrade">
+    <name>mod_eventscalendar</name>
+    <author>Your Name</author>
+    <version>1.0.0</version>
+    <description>Calendar with events</description>
+    
+    <files>
+        <filename module="mod_eventscalendar">mod_eventscalendar.php</filename>
+        <filename>helper.php</filename>
+        <folder>tmpl</folder>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic" label="Events">
+                <field 
+                    name="events" 
+                    type="subform" 
+                    label="Events List"
+                    description="Add, edit or delete events"
+                    multiple="true"
+                    layout="joomla.form.field.subform.repeatable-table"
+                    button="Add event">
+                    <form>
+                        <field 
+                            name="date" 
+                            type="text" 
+                            label="Date"
+                            description="Format: YYYY-MM-DD (example: 2026-05-19)"
+                            size="10"
+                            required="true"
+                            default="" />
+                        
+                        <field 
+                            name="title" 
+                            type="text" 
+                            label="Event Title"
+                            size="30"
+                            required="true"
+                            default="" />
+                        
+                        <field 
+                            name="url" 
+                            type="text" 
+                            label="URL"
+                            description="Full URL (example: https://example.com or /page.html)"
+                            size="40"
+                            default="" />
+                    </form>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

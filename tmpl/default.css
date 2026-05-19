@@ -1,0 +1,273 @@
+/* Современные стили для календаря */
+.mod-events-calendar {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    position: relative;
+}
+
+/* Заголовок */
+.mod-events-calendar .calendar-header {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.mod-events-calendar .calendar-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+/* Таблица */
+.mod-events-calendar .calendar-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 4px;
+}
+
+/* Дни недели */
+.mod-events-calendar .weekday th {
+    padding: 12px 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6c63ff;
+    background: #f8f9ff;
+    border-radius: 12px;
+    text-align: center;
+    letter-spacing: 0.3px;
+}
+
+/* Ячейки */
+.mod-events-calendar .calendar-cell {
+    background: #ffffff;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    vertical-align: top;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.mod-events-calendar .calendar-cell > div {
+    min-height: 80px;
+    padding: 10px 8px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Пустые ячейки */
+.mod-events-calendar .calendar-cell.empty > div {
+    background: #fafbfc;
+    opacity: 0.5;
+}
+
+/* Число месяца */
+.mod-events-calendar .day-number {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4a4a6a;
+    margin-bottom: 8px;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+/* Сегодня */
+.mod-events-calendar .calendar-cell.today > div {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.mod-events-calendar .calendar-cell.today .day-number {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+}
+
+.mod-events-calendar .calendar-cell.today {
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* Ячейки с событиями */
+.mod-events-calendar .calendar-cell.has-event > div {
+    background: linear-gradient(135deg, #fff5eb 0%, #ffe8d6 100%);
+    cursor: pointer;
+}
+
+.mod-events-calendar .calendar-cell.has-event .day-number {
+    background: #ff6b6b;
+    color: white;
+}
+
+/* Счётчик мероприятий */
+.mod-events-calendar .events-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: rgba(255, 107, 107, 0.15);
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-top: 4px;
+}
+
+.mod-events-calendar .events-count-number {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ff6b6b;
+}
+
+.mod-events-calendar .events-count-text {
+    font-size: 10px;
+    font-weight: 500;
+    color: #ff6b6b;
+    text-transform: lowercase;
+}
+
+/* Hover эффекты */
+@media (hover: hover) {
+    .mod-events-calendar .calendar-cell.has-event > div:hover {
+        background: linear-gradient(135deg, #ffe0cc 0%, #ffd4b8 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .mod-events-calendar .calendar-cell:not(.empty) > div:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+}
+
+/* Popup стили */
+.mod-events-calendar .event-popup {
+    display: none;
+    position: absolute;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    min-width: 240px;
+    max-width: 300px;
+    z-index: 10000;
+    font-size: 13px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mod-events-calendar .event-popup.active {
+    display: block;
+}
+
+.mod-events-calendar .event-popup.mobile {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+    right: auto;
+    width: 90%;
+    max-width: 320px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.mod-events-calendar .popup-date {
+    font-weight: 600;
+    color: #6c63ff;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.mod-events-calendar .popup-event {
+    margin-bottom: 12px;
+    padding: 10px;
+    background: #f8f9ff;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+
+.mod-events-calendar .popup-event:last-child {
+    margin-bottom: 0;
+}
+
+.mod-events-calendar .popup-event-title {
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+    font-size: 13px;
+    word-break: break-word;
+}
+
+.mod-events-calendar .popup-event-link a {
+    color: #6c63ff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    word-break: break-all;
+}
+
+.mod-events-calendar .popup-event-link a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .mod-events-calendar {
+        padding: 12px;
+    }
+    
+    .mod-events-calendar .calendar-cell > div {
+        min-height: 60px;
+        padding: 6px 4px;
+    }
+    
+    .mod-events-calendar .day-number {
+        font-size: 13px;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+    }
+    
+    .mod-events-calendar .weekday th {
+        padding: 8px 4px;
+        font-size: 11px;
+    }
+    
+    .mod-events-calendar .events-count {
+        padding: 2px 6px;
+    }
+    
+    .mod-events-calendar .events-count-number {
+        font-size: 11px;
+    }
+    
+    .mod-events-calendar .events-count-text {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mod-events-calendar .calendar-cell > div {
+        min-height: 50px;
+        padding: 4px 3px;
+    }
+    
+    .mod-events-calendar .day-number {
+        font-size: 12px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+    }
+}
