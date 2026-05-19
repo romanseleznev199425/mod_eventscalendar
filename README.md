@@ -91,6 +91,7 @@ mod_eventscalendar/
 
 Добавьте в CSS вашего шаблона:
 
+
 ```css
 /* Изменение цветовой схемы календаря */
 .mod-events-calendar .has-event > div {
@@ -112,6 +113,8 @@ mod_eventscalendar/
     color: #ваш-цвет;
     background: #ваш-фон;
 }
+
+
 
 🔧 Устранение неполадок
 Календарь не отображается
