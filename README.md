@@ -87,35 +87,6 @@ mod_eventscalendar/
 
 ## 🎨 Настройка внешнего вида
 
-### Переопределение стилей CSS
-
-Добавьте в CSS вашего шаблона:
-
-
-```css
-/* Изменение цветовой схемы календаря */
-.mod-events-calendar .has-event > div {
-    background: linear-gradient(135deg, #ваш-цвет-1, #ваш-цвет-2);
-}
-
-/* Изменение цвета бейджа с событиями */
-.mod-events-calendar .events-count-number {
-    color: #ваш-цвет;
-}
-
-/* Изменение цвета сегодняшнего дня */
-.mod-events-calendar .calendar-cell.today > div {
-    background: linear-gradient(135deg, #ваш-градиент);
-}
-
-/* Изменение цвета дней недели */
-.mod-events-calendar .weekday th {
-    color: #ваш-цвет;
-    background: #ваш-фон;
-}
-
-
-
 🔧 Устранение неполадок
 Календарь не отображается
 Убедитесь, что модуль опубликован на правильную позицию
@@ -189,3 +160,29 @@ v1.0.0 (2026-05-19)
 Селезнев Роман
 
 GitHub: @romanseleznev199425
+
+### Переопределение стилей CSS
+
+Добавьте в CSS вашего шаблона:
+
+```css
+/* Изменение цветовой схемы календаря */
+.mod-events-calendar .has-event > div {
+    background: linear-gradient(135deg, #ваш-цвет-1, #ваш-цвет-2);
+}
+
+/* Изменение цвета бейджа с событиями */
+.mod-events-calendar .events-count-number {
+    color: #ваш-цвет;
+}
+
+/* Изменение цвета сегодняшнего дня */
+.mod-events-calendar .calendar-cell.today > div {
+    background: linear-gradient(135deg, #ваш-градиент);
+}
+
+/* Изменение цвета дней недели */
+.mod-events-calendar .weekday th {
+    color: #ваш-цвет;
+    background: #ваш-фон;
+}
